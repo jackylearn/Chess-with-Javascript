@@ -1,0 +1,75 @@
+:root{
+    --black-side-color: rgb(119, 17, 31);
+    --white-side-color: rgb(204, 160, 131);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main {
+    margin: auto 20% auto 20%;
+    max-width: 670px;
+}
+
+.coordinate {
+    width: 670px;
+    height: 670px;
+    font-size: 1.5rem;
+    /* border: 1px solid red; */
+    display: grid;
+    grid-template-areas: 
+    ". number"
+    "letter board";
+    grid-gap:0 0;
+}
+
+.board {
+    border: 4px solid black;
+    width: 610px;
+    height: 610px;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    /* transform: translate(60px, -100%); */
+    grid-area: board;
+}
+
+.square {
+    height: 75px;
+    width: 75px;
+}
+
+.black {
+    background-color: rgb(119, 17, 31);
+    opacity: 0.8;
+}
+
+.white{ 
+    background-color: rgb(204, 160, 131);
+    opacity: 0.9;
+}
+
+.boardLetters {
+    height: 610px;
+    width: 60px;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    color: #333;
+    /* border: 1px solid orangered; */
+    text-align: center;
+    grid-area: letter;
+}
+
+.boardNumbers {
+    width: 610px;
+    height: 60px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /* border: 1px solid blue; */
+    grid-area: number;
+}
