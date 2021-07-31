@@ -11,11 +11,11 @@ let black = false;
 for (let i = 1; i <= 8; i++) {
     let rank1 = document.createElement('div')
     rank1.classList.add('sidebar')
-    rank1.textContent = i;
+    rank1.textContent = 9-i;
     rankLegend_left.appendChild(rank1);
     let rank2 = document.createElement('div')
     rank2.classList.add('sidebar')
-    rank2.textContent = i;
+    rank2.textContent = 9-i;
     rankLegend_right.appendChild(rank2);
 
     let file1 = document.createElement('div')
