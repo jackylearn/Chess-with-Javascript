@@ -1,12 +1,16 @@
 :root{
-    --black-side-color: rgb(119, 17, 31);
-    --white-side-color: rgb(204, 160, 131);
+    --black-side-color: rgb(173, 103, 81);
+    --white-side-color: rgb(255, 234, 220);
+    --side-bar-color: rgb(131, 42, 0);
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background-color: #dbdbdb;
+    font-family: monospace;
+    font-weight: 800;
 }
 
 main {
@@ -18,22 +22,26 @@ main {
     width: 670px;
     height: 670px;
     font-size: 1.5rem;
-    /* border: 1px solid red; */
+    /* border: 3px solid red; */
     display: grid;
     grid-template-areas: 
-    ". number"
-    "letter board";
+    ". letter1 ."
+    "number1 board number2"
+    ". letter2 .";
     grid-gap:0 0;
+    color: rgb(255, 255, 255);
+    background-color: var(--side-bar-color);
+    border-radius: 20px;
 }
 
 .board {
-    border: 4px solid black;
+    background-color: var(--black-side-color);
+    border: 5px solid black;
     width: 610px;
     height: 610px;
     display: grid;
     grid-template-columns: repeat(8, 1fr);
     grid-template-rows: repeat(8, 1fr);
-    /* transform: translate(60px, -100%); */
     grid-area: board;
 }
 
@@ -43,33 +51,50 @@ main {
 }
 
 .black {
-    background-color: rgb(119, 17, 31);
-    opacity: 0.8;
+    background-color: var(--black-side-color);
 }
 
 .white{ 
-    background-color: rgb(204, 160, 131);
-    opacity: 0.9;
+    background-color: var(--white-side-color);
 }
 
-.boardLetters {
+.rankLegend-left,
+.rankLegend-right {
     height: 610px;
-    width: 60px;
+    width: 25px;
     display:flex;
     flex-direction: column;
     justify-content: space-around;
-    color: #333;
     /* border: 1px solid orangered; */
     text-align: center;
-    grid-area: letter;
+    background-color: inherit;
 }
 
-.boardNumbers {
+.fileLegend-top,
+.fileLegend-bottom
+{
     width: 610px;
-    height: 60px;
+    height: 25px;
     display: flex;
     justify-content: space-around;
     align-items: center;
     /* border: 1px solid blue; */
-    grid-area: number;
+    background-color: inherit;
+}
+
+
+.rankLegend-left {
+    grid-area: number1;
+}
+.rankLegend-right {
+    grid-area: number2;
+}
+.fileLegend-top {
+    grid-area: letter1;
+}
+.fileLegend-bottom {
+    grid-area: letter2;
+}
+.sidebar {
+    background-color: inherit;
 }
